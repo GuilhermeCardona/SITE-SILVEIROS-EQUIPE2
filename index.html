@@ -303,80 +303,80 @@
             font-family: 'Segoe UI', sans-serif;
         }
 
-        /* Contact Section */
-        #contato {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        #contato h2 {
-            color: white;
-        }
-
-        #contato h2::after {
-            background-color: var(--accent);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .contact-item {
-            text-align: center;
-        }
-
-        .contact-item h3 {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-            font-weight: 600;
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #ecf0f1;
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
             font-family: 'Segoe UI', sans-serif;
         }
 
-        .contact-item p {
-            font-size: 0.95rem;
-            opacity: 0.95;
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            text-align: left;
         }
 
-        .contact-item a {
+        .footer-contact h3 {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-contact p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-contact a {
             color: var(--accent);
             text-decoration: none;
             transition: opacity 0.3s ease;
         }
 
-        .contact-item a:hover {
+        .footer-contact a:hover {
             opacity: 0.8;
         }
 
-        /* Footer */
-        footer {
-            background-color: #1a252f;
-            color: #ecf0f1;
-            text-align: center;
-            padding: 2rem;
+        .footer-info {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .footer-info p {
             font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 3rem;
+            line-height: 1.8;
+            opacity: 0.9;
         }
 
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive */
+        /* Responsividade */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .footer-info {
+                text-align: center;
+                justify-content: flex-start;
             }
 
             section {
                 padding: 2.5rem 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
             }
 
             section h2 {
@@ -388,6 +388,50 @@
             }
 
             nav a {
+                font-size: 0.85rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid .team-member:nth-child(5) {
+                grid-column: 1;
+            }
+
+            .team-grid .team-member:nth-child(6) {
+                grid-column: 2;
+            }
+
+            .team-grid .team-member:nth-child(7) {
+                grid-column: 1 / span 2;
+                max-width: calc(50% - 0.75rem);
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid .team-member:nth-child(5),
+            .team-grid .team-member:nth-child(6),
+            .team-grid .team-member:nth-child(7) {
+                grid-column: 1;
+                max-width: 100%;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-contact,
+            .footer-info {
                 font-size: 0.85rem;
             }
         }
@@ -411,7 +455,7 @@
         <h2>Sobre o Escritório</h2>
         <div class="about-text">
             <p>
-                Advocacia é um escritório especializado em litígios complexos, consultoria jurídica estratégica e conformidade regulatória. Atuamos junto aos principais tribunais brasileiros, oferecendo defesa técnica de excelência em áreas que exigem precisão metodológica e raciocínio jurídico apurado.
+                Nunes Nardin Advocacia é um escritório especializado em litígios complexos, consultoria jurídica estratégica e conformidade regulatória. Atuamos junto aos principais tribunais brasileiros, oferecendo defesa técnica de excelência em áreas que exigem precisão metodológica e raciocínio jurídico apurado.
             </p>
             <p>
                 Nossa atuação abrange desde o contencioso cível e trabalhista até questões tributárias, de propriedade intelectual e insolvência. Compreendemos que cada caso é único — por isso não oferecemos respostas prontas, mas soluções construídas rigorosamente sobre os fatos e a jurisprudência que efetivamente importam.
@@ -539,26 +583,19 @@
         </div>
     </section>
 
-    <section id="contato" class="container">
-        <h2>Contato</h2>
-        <div class="contact-grid">
-            <div class="contact-item">
-                <h3>Email</h3>
-                <p><a href="mailto:contato@nunesnardin.adv.br">contato@nunesnardin.adv.br</a></p>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>Contato</h3>
+                <p><a href="mailto:escritórioequipe2@gmail.com">escritórioequipe2@gmail.com</a></p>
+                <p><a href="tel:+5151992100874">(51) 99210-0874</a></p>
+                <p>Porto Alegre — Av. Carlos Gomes, 258 - 9º andar</p>
             </div>
-            <div class="contact-item">
-                <h3>Telefone</h3>
-                <p><a href="tel:+5151999990000">(51) 99999-0000</a></p>
-            </div>
-            <div class="contact-item">
-                <h3>Localização</h3>
-                <p>Porto Alegre — Rio Grande do Sul</p>
+            <div class="footer-info">
+                <p>&copy; 2026 Advocacia. Todos os direitos reservados.</p>
+                <p style="font-size: 0.85rem; opacity: 0.8;">Projeto Simulado — Simulação Acadêmica EAJCS 2026</p>
             </div>
         </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Advocacia. Todos os direitos reservados. | Projeto Simulado — Simulação Acadêmica EAJCS 2026</p>
     </footer>
 </body>
 </html>
