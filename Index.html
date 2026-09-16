@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Escritório especializado em litígios cíveis, trabalhista, tributário e propriedade intelectual.">
-    <title>Nunes Nardin Advocacia — Litígios e Consultoria Jurídica</title>
+    <title>Advocacia — Litígios e Consultoria Jurídica</title>
     <style>
         * {
             margin: 0;
@@ -194,9 +194,52 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
             margin-top: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .team-grid .team-member:nth-child(n+5) {
+            grid-column: auto;
+        }
+
+        .team-grid .team-member:nth-child(5),
+        .team-grid .team-member:nth-child(6),
+        .team-grid .team-member:nth-child(7) {
+            grid-column: auto;
+        }
+
+        .team-grid .team-member:nth-last-child(3) {
+            grid-column: 2 / span 1;
+        }
+
+        .team-grid .team-member:nth-last-child(2) {
+            grid-column: 3 / span 1;
+        }
+
+        .team-grid .team-member:nth-last-child(1) {
+            grid-column: 4 / span 1;
+        }
+
+        @supports (display: grid) {
+            .team-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+            }
+
+            .team-grid .team-member:nth-child(5) {
+                grid-column: 2;
+            }
+
+            .team-grid .team-member:nth-child(6) {
+                grid-column: 3;
+            }
+
+            .team-grid .team-member:nth-child(7) {
+                grid-column: 4;
+            }
         }
 
         .team-member {
@@ -214,13 +257,13 @@
 
         .team-photo {
             width: 100%;
-            height: 220px;
+            height: 240px;
             background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #7f8c8d;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             overflow: hidden;
             font-family: 'Segoe UI', sans-serif;
         }
@@ -232,7 +275,7 @@
         }
 
         .team-info {
-            padding: 1.5rem;
+            padding: 1.2rem;
             text-align: center;
         }
 
@@ -319,6 +362,7 @@
             padding: 2rem;
             font-size: 0.9rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
         }
 
         footer p {
@@ -351,7 +395,7 @@
 </head>
 <body>
     <header>
-        <h1>Nunes Nardin Advocacia</h1>
+        <h1>Advocacia</h1>
         <p class="subtitle">Litígios, Consultoria e Conformidade</p>
         <p class="tagline">Simulação Acadêmica — VIII Semana do Estagiário EAJCS 2026</p>
     </header>
@@ -413,8 +457,13 @@
     <section id="equipe" class="container">
         <h2>Nossa Equipe</h2>
         <div class="team-grid">
+            <!-- INSTRUÇÃO: Para adicionar as fotos reais, substitua o "src" abaixo pelo caminho da imagem -->
+            <!-- Exemplo: src="flavia.jpg" ou src="caminho/para/flavia.jpg" -->
+            
             <div class="team-member">
-                <div class="team-photo">Flávia Nunes</div>
+                <div class="team-photo">
+                    <img src="flavia.jpg" alt="Flávia Nunes">
+                </div>
                 <div class="team-info">
                     <h3>Flávia Nunes</h3>
                     <div class="specialty">Direito Trabalhista</div>
@@ -423,7 +472,9 @@
             </div>
 
             <div class="team-member">
-                <div class="team-photo">João Nardin</div>
+                <div class="team-photo">
+                    <img src="joao.jpg" alt="João Nardin">
+                </div>
                 <div class="team-info">
                     <h3>João Nardin</h3>
                     <div class="specialty">Direito Tributário</div>
@@ -432,7 +483,9 @@
             </div>
 
             <div class="team-member">
-                <div class="team-photo">Isadora Zotz</div>
+                <div class="team-photo">
+                    <img src="isadora.jpg" alt="Isadora Zotz">
+                </div>
                 <div class="team-info">
                     <h3>Isadora Zotz</h3>
                     <div class="specialty">Contencioso Cível</div>
@@ -441,7 +494,9 @@
             </div>
 
             <div class="team-member">
-                <div class="team-photo">Wesley Ribeiro</div>
+                <div class="team-photo">
+                    <img src="wesley.jpg" alt="Wesley Ribeiro">
+                </div>
                 <div class="team-info">
                     <h3>Wesley Ribeiro</h3>
                     <div class="specialty">Direito do Consumidor</div>
@@ -450,7 +505,9 @@
             </div>
 
             <div class="team-member">
-                <div class="team-photo">Nathany Silveira</div>
+                <div class="team-photo">
+                    <img src="nathany.jpg" alt="Nathany Silveira">
+                </div>
                 <div class="team-info">
                     <h3>Nathany Silveira</h3>
                     <div class="specialty">Direito Trabalhista</div>
@@ -459,7 +516,9 @@
             </div>
 
             <div class="team-member">
-                <div class="team-photo">Maria Cassales</div>
+                <div class="team-photo">
+                    <img src="maria.jpg" alt="Maria Cassales">
+                </div>
                 <div class="team-info">
                     <h3>Maria Cassales</h3>
                     <div class="specialty">Direito do Consumidor</div>
@@ -468,7 +527,9 @@
             </div>
 
             <div class="team-member">
-                <div class="team-photo">Gabriely Calesso</div>
+                <div class="team-photo">
+                    <img src="gabriely.jpg" alt="Gabriely Calesso">
+                </div>
                 <div class="team-info">
                     <h3>Gabriely Calesso</h3>
                     <div class="specialty">Insolvência & Falência</div>
@@ -497,8 +558,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Nunes Nardin Advocacia. Todos os direitos reservados.</p>
-        <p style="font-size: 0.85rem; opacity: 0.8;">Projeto Simulado — Simulação Acadêmica</p>
+        <p>&copy; 2026 Advocacia. Todos os direitos reservados. | Projeto Simulado — Simulação Acadêmica EAJCS 2026</p>
     </footer>
 </body>
 </html>
