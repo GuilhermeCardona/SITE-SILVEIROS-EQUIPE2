@@ -39,14 +39,16 @@ header {
 }
 
 .logo {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 1.5rem;
-    border: 3px solid var(--primary);
-    border-radius: 12px;
+    width: 110px;          /* Aumenta o tamanho de forma elegante */
+    height: auto;          /* Mantém a proporção real da imagem sem cortar ou distorcer */
+    margin: 0 auto 1rem;   /* Centraliza perfeitamente no cabeçalho */
     display: block;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(26, 40, 71, 0.15);
+    
+    /* Remove a borda azul grossa, o fundo e o recorte quadrado */
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 header h1 {
