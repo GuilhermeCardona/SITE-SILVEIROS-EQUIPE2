@@ -295,7 +295,7 @@ SITE-SILVEIROS-EQUIPE2/
 - Wesley Ribeiro
 - Nathany Silveira
 - Maria Cassales
-- Gabriely Calesso
+- Gabriele Calesso
 
 **Orientação Acadêmica**: VIII Semana do Estagiário — EAJCS
 
