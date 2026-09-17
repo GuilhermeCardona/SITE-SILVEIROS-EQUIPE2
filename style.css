@@ -235,26 +235,18 @@ section h2::after {
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza a última linha automaticamente */
     gap: 1.8rem;
     margin-top: 2.5rem;
     margin-bottom: 4rem;
 }
 
-.team-grid .team-member:nth-child(5) {
-    grid-column: 2;
-}
-
-.team-grid .team-member:nth-child(6) {
-    grid-column: 3;
-}
-
-.team-grid .team-member:nth-child(7) {
-    grid-column: 4;
-}
-
 .team-member {
+    /* Mantém os 4 por linha no desktop descontando o espaço dos gaps */
+    flex: 0 1 calc(25% - 1.4rem);
+    min-width: 220px;
     background: var(--cream);
     border: 2px solid var(--border);
     overflow: hidden;
@@ -296,6 +288,31 @@ section h2::after {
 .team-info {
     padding: 1.4rem;
     text-align: center;
+}
+
+.team-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.team-info .specialty {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-info p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-family: 'Lora', serif;
 }
 
 .team-info h3 {
