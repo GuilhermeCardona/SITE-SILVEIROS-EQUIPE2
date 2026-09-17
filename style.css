@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a2847;
+    --accent: #c9a961;
+    --light-bg: #f5f3f0;
+    --cream: #faf9f7;
+    --text: #2c2c2c;
+    --text-light: #5a5a5a;
+    --border: #e8e4df;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.8;
+    color: var(--text);
+    background-color: var(--cream);
+}
+
+/* Header com Logo */
+header {
+    background: linear-gradient(135deg, var(--cream) 0%, var(--light-bg) 100%);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid var(--accent);
+    position: relative;
+}
+
+.logo-container {
+    margin-bottom: 2rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border: 3px solid var(--primary);
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(26, 40, 71, 0.15);
+}
+
+header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+header .subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+header .tagline {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-style: italic;
+    margin-top: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Navigation */
+nav {
+    background-color: var(--primary);
+    padding: 1.3rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px rgba(26, 40, 71, 0.1);
+}
+
+nav a {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+    position: relative;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Sections */
+section {
+    padding: 4.5rem 2rem;
+}
+
+section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* About Section */
+#sobre {
+    background-color: var(--light-bg);
+}
+
+.about-text {
+    font-size: 1rem;
+    line-height: 2;
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: justify;
+}
+
+.about-text p {
+    margin-bottom: 1.8rem;
+    color: var(--text);
+}
+
+/* Areas Grid */
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2.5rem;
+}
+
+.area-card {
+    background: var(--cream);
+    border: 2px solid var(--border);
+    padding: 2.2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.area-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.area-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(26, 40, 71, 0.1);
+    transform: translateY(-4px);
+}
+
+.area-card:hover::before {
+    transform: scaleX(1);
+}
+
+.area-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.area-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Team Section */
+#equipe {
+    background-color: var(--light-bg);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.team-grid .team-member:nth-child(5) {
+    grid-column: 2;
+}
+
+.team-grid .team-member:nth-child(6) {
+    grid-column: 3;
+}
+
+.team-grid .team-member:nth-child(7) {
+    grid-column: 4;
+}
+
+.team-member {
+    background: var(--cream);
+    border: 2px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(26, 40, 71, 0.08);
+    transition: all 0.4s ease;
+}
+
+.team-member:hover {
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(201, 169, 97, 0.2);
+    transform: translateY(-6px);
+}
+
+.team-photo {
+    width: 100%;
+    height: 240px;
+    background: linear-gradient(135deg, var(--border) 0%, #e0dbd6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    overflow: hidden;
+    font-family: 'Cormorant Garamond', serif;
+    position: relative;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.team-member:hover .team-photo img {
+    transform: scale(1.05);
+}
+
+.team-info {
+    padding: 1.4rem;
+    text-align: center;
+}
+
+.team-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.team-info .specialty {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-info p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-family: 'Lora', serif;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary);
+    color: var(--cream);
+    padding: 3rem 2rem 2rem;
+    border-top: 3px solid var(--accent);
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    text-align: left;
+    font-family: 'Lora', serif;
+}
+
+.footer-contact h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--accent);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-contact p {
+    font-size: 0.95rem;
+    line-height: 2;
+    margin-bottom: 0.6rem;
+    opacity: 0.95;
+}
+
+.footer-contact a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-contact a:hover {
+    opacity: 0.8;
+}
+
+.footer-info {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Lora', serif;
+}
+
+.footer-info p {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    opacity: 0.9;
+}
+
+.footer-subtext {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3rem 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        gap: 1.5rem;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .team-grid .team-member:nth-child(5) {
+        grid-column: 1;
+    }
+
+    .team-grid .team-member:nth-child(6) {
+        grid-column: 2;
+    }
+
+    .team-grid .team-member:nth-child(7) {
+        grid-column: 1 / span 2;
+        max-width: calc(50% - 0.6rem);
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-info {
+        text-align: center;
+        justify-content: flex-start;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid .team-member:nth-child(5),
+    .team-grid .team-member:nth-child(6),
+    .team-grid .team-member:nth-child(7) {
+        grid-column: 1;
+        max-width: 100%;
+    }
+
+    nav {
+        gap: 0.8rem;
+    }
+
+    nav a {
+        font-size: 0.75rem;
+        gap: 1rem;
+    }
+
+    .footer-contact,
+    .footer-info {
+        font-size: 0.85rem;
+    }
+
+    .about-text {
+        text-align: left;
+    }
+}

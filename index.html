@@ -5,440 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Escritório especializado em litígios cíveis, trabalhista, tributário e propriedade intelectual.">
     <title>Advocacia — Litígios e Consultoria Jurídica</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #2c3e50;
-            --accent: #e67e22;
-            --light: #ecf0f1;
-            --text: #34495e;
-            --border: #bdc3c7;
-        }
-
-        body {
-            font-family: 'Georgia', 'Garamond', serif;
-            line-height: 1.7;
-            color: var(--text);
-            background-color: #fff;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            border-bottom: 4px solid var(--accent);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        header .subtitle {
-            font-size: 1rem;
-            font-style: italic;
-            opacity: 0.9;
-            letter-spacing: 0.5px;
-        }
-
-        header .tagline {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-top: 1rem;
-            font-style: normal;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: #f8f9fa;
-            padding: 1.2rem 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-            border-bottom: 1px solid var(--border);
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        nav a {
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Sections */
-        section {
-            padding: 4rem 2rem;
-        }
-
-        section h2 {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 2rem;
-            text-align: center;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent);
-        }
-
-        /* About Section */
-        #sobre {
-            background-color: #f8f9fa;
-        }
-
-        .about-text {
-            font-size: 1rem;
-            line-height: 1.9;
-            max-width: 800px;
-            margin: 2rem auto;
-            text-align: justify;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        /* Areas Grid */
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .area-card {
-            background: white;
-            border: 1px solid var(--border);
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .area-card:hover {
-            border-left-color: var(--accent);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .area-card h3 {
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .area-card p {
-            font-size: 0.95rem;
-            color: #7f8c8d;
-            line-height: 1.6;
-        }
-
-        /* Team Section */
-        #equipe {
-            background-color: #f8f9fa;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .team-grid .team-member:nth-child(n+5) {
-            grid-column: auto;
-        }
-
-        .team-grid .team-member:nth-child(5),
-        .team-grid .team-member:nth-child(6),
-        .team-grid .team-member:nth-child(7) {
-            grid-column: auto;
-        }
-
-        .team-grid .team-member:nth-last-child(3) {
-            grid-column: 2 / span 1;
-        }
-
-        .team-grid .team-member:nth-last-child(2) {
-            grid-column: 3 / span 1;
-        }
-
-        .team-grid .team-member:nth-last-child(1) {
-            grid-column: 4 / span 1;
-        }
-
-        @supports (display: grid) {
-            .team-grid {
-                display: grid;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1.5rem;
-            }
-
-            .team-grid .team-member:nth-child(5) {
-                grid-column: 2;
-            }
-
-            .team-grid .team-member:nth-child(6) {
-                grid-column: 3;
-            }
-
-            .team-grid .team-member:nth-child(7) {
-                grid-column: 4;
-            }
-        }
-
-        .team-member {
-            background: white;
-            border: 1px solid var(--border);
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .team-member:hover {
-            box-shadow: 0 6px 16px rgba(230, 126, 34, 0.15);
-            transform: translateY(-4px);
-        }
-
-        .team-photo {
-            width: 100%;
-            height: 240px;
-            background: linear-gradient(135deg, #ecf0f1 0%, #d5dbdb 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #7f8c8d;
-            font-size: 0.85rem;
-            overflow: hidden;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .team-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .team-info {
-            padding: 1.2rem;
-            text-align: center;
-        }
-
-        .team-info h3 {
-            font-size: 1rem;
-            color: var(--primary);
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .team-info .specialty {
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-            font-family: 'Segoe UI', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .team-info p {
-            font-size: 0.8rem;
-            color: #7f8c8d;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a252f;
-            color: #ecf0f1;
-            padding: 3rem 2rem 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 3rem;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .footer-content {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            text-align: left;
-        }
-
-        .footer-contact h3 {
-            color: var(--accent);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .footer-contact p {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-contact a {
-            color: var(--accent);
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-contact a:hover {
-            opacity: 0.8;
-        }
-
-        .footer-info {
-            text-align: right;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .footer-info p {
-            font-size: 0.9rem;
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .footer-info {
-                text-align: center;
-                justify-content: flex-start;
-            }
-
-            section {
-                padding: 2.5rem 1rem;
-            }
-
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            section h2 {
-                font-size: 1.5rem;
-            }
-
-            nav {
-                gap: 1rem;
-            }
-
-            nav a {
-                font-size: 0.85rem;
-            }
-
-            .team-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .team-grid .team-member:nth-child(5) {
-                grid-column: 1;
-            }
-
-            .team-grid .team-member:nth-child(6) {
-                grid-column: 2;
-            }
-
-            .team-grid .team-member:nth-child(7) {
-                grid-column: 1 / span 2;
-                max-width: calc(50% - 0.75rem);
-                margin: 0 auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .team-grid .team-member:nth-child(5),
-            .team-grid .team-member:nth-child(6),
-            .team-grid .team-member:nth-child(7) {
-                grid-column: 1;
-                max-width: 100%;
-            }
-
-            header h1 {
-                font-size: 1.5rem;
-            }
-
-            .areas-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-contact,
-            .footer-info {
-                font-size: 0.85rem;
-            }
-        }
-    </style>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Conexão com a folha de estilo externa -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
+        <div class="logo-container">
+            <img src="img/logo .jpg" alt="Logo Advocacia" class="logo">
+        </div>
         <h1>Advocacia</h1>
         <p class="subtitle">Litígios, Consultoria e Conformidade</p>
         <p class="tagline">Simulação Acadêmica — VIII Semana do Estagiário EAJCS 2026</p>
@@ -448,14 +28,13 @@
         <a href="#sobre">Sobre</a>
         <a href="#pratica">Prática</a>
         <a href="#equipe">Equipe</a>
-        <a href="#contato">Contato</a>
     </nav>
 
     <section id="sobre" class="container">
         <h2>Sobre o Escritório</h2>
         <div class="about-text">
             <p>
-                Nunes Nardin Advocacia é um escritório especializado em litígios complexos, consultoria jurídica estratégica e conformidade regulatória. Atuamos junto aos principais tribunais brasileiros, oferecendo defesa técnica de excelência em áreas que exigem precisão metodológica e raciocínio jurídico apurado.
+                Advocacia é um escritório especializado em litígios complexos, consultoria jurídica estratégica e conformidade regulatória. Atuamos junto aos principais tribunais brasileiros, oferecendo defesa técnica de excelência em áreas que exigem precisão metodológica e raciocínio jurídico apurado.
             </p>
             <p>
                 Nossa atuação abrange desde o contencioso cível e trabalhista até questões tributárias, de propriedade intelectual e insolvência. Compreendemos que cada caso é único — por isso não oferecemos respostas prontas, mas soluções construídas rigorosamente sobre os fatos e a jurisprudência que efetivamente importam.
@@ -501,12 +80,9 @@
     <section id="equipe" class="container">
         <h2>Nossa Equipe</h2>
         <div class="team-grid">
-            <!-- INSTRUÇÃO: Para adicionar as fotos reais, substitua o "src" abaixo pelo caminho da imagem -->
-            <!-- Exemplo: src="flavia.jpg" ou src="caminho/para/flavia.jpg" -->
-            
             <div class="team-member">
                 <div class="team-photo">
-                    <img src="flavia.jpg" alt="Flávia Nunes">
+                    <img src="img/flavia.jpg" alt="Flávia Nunes">
                 </div>
                 <div class="team-info">
                     <h3>Flávia Nunes</h3>
@@ -517,7 +93,7 @@
 
             <div class="team-member">
                 <div class="team-photo">
-                    <img src="joao.jpg" alt="João Nardin">
+                    <img src="img/joao.jpg" alt="João Nardin">
                 </div>
                 <div class="team-info">
                     <h3>João Nardin</h3>
@@ -528,7 +104,7 @@
 
             <div class="team-member">
                 <div class="team-photo">
-                    <img src="isadora.jpg" alt="Isadora Zotz">
+                    <img src="img/isadora.jpg" alt="Isadora Zotz">
                 </div>
                 <div class="team-info">
                     <h3>Isadora Zotz</h3>
@@ -539,18 +115,18 @@
 
             <div class="team-member">
                 <div class="team-photo">
-                    <img src="wesley.jpg" alt="Wesley Ribeiro">
+                    <img src="img/wesley.jpg" alt="Wesley Ribeiro">
                 </div>
                 <div class="team-info">
                     <h3>Wesley Ribeiro</h3>
                     <div class="specialty">Direito do Consumidor</div>
-                    <p>Estagiário em Direito</p>
+                    <p>Estagiária em Direito</p>
                 </div>
             </div>
 
             <div class="team-member">
                 <div class="team-photo">
-                    <img src="nathany.jpg" alt="Nathany Silveira">
+                    <img src="img/nathany.jpg" alt="Nathany Silveira">
                 </div>
                 <div class="team-info">
                     <h3>Nathany Silveira</h3>
@@ -561,7 +137,7 @@
 
             <div class="team-member">
                 <div class="team-photo">
-                    <img src="maria.jpg" alt="Maria Cassales">
+                    <img src="img/maria.jpg" alt="Maria Cassales">
                 </div>
                 <div class="team-info">
                     <h3>Maria Cassales</h3>
@@ -572,7 +148,7 @@
 
             <div class="team-member">
                 <div class="team-photo">
-                    <img src="gabriely.jpg" alt="Gabriely Calesso">
+                    <img src="img/gabriely.jpg" alt="Gabriely Calesso">
                 </div>
                 <div class="team-info">
                     <h3>Gabriely Calesso</h3>
@@ -587,13 +163,13 @@
         <div class="footer-content">
             <div class="footer-contact">
                 <h3>Contato</h3>
-                <p><a href="mailto:escritórioequipe2@gmail.com">escritórioequipe2@gmail.com</a></p>
-                <p><a href="tel:+5151992100874">(51) 99210-0874</a></p>
-                <p>Porto Alegre — Av. Carlos Gomes, 258 - 9º andar</p>
+                <p><a href="mailto:contato@advocacia.adv.br">contato@advocacia.adv.br</a></p>
+                <p><a href="tel:+5151999990000">(51) 99999-0000</a></p>
+                <p>Porto Alegre — Rio Grande do Sul</p>
             </div>
             <div class="footer-info">
                 <p>&copy; 2026 Advocacia. Todos os direitos reservados.</p>
-                <p style="font-size: 0.85rem; opacity: 0.8;">Projeto Simulado — Simulação Acadêmica EAJCS 2026</p>
+                <p class="footer-subtext">Projeto Simulado — Simulação Acadêmica EAJCS 2026</p>
             </div>
         </div>
     </footer>
